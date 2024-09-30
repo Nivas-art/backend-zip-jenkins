@@ -17,7 +17,7 @@ pipeline {
                script{
                 def project = readJSON file: 'Package.json'
                 appversion = project.version
-                echo "appversion is: ${appversion}"
+                echo "appversion is: $appversion"
                }
             }
         } 
@@ -26,7 +26,7 @@ pipeline {
                sh """
                 npm insatll
                 ls -ltr
-                echo "appversion is: ${appversion}"
+                echo "appversion is: $appversion"
                """
             }
         }
