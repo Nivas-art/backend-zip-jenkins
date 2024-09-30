@@ -21,9 +21,6 @@ pipeline {
                }
             }
         } 
-    }
-
-     stages {
         stage('dependece insatll') {
             steps {
                sh """
@@ -46,5 +43,5 @@ pipeline {
             echo 'I will run when pipeline is failure'
         }
     }
-}
+     }
 }
