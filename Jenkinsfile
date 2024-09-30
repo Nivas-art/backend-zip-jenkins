@@ -24,7 +24,7 @@ pipeline {
         stage('dependece insatll') {
             steps {
                sh """
-                npm insatll
+                npm install
                 ls -ltr
                 echo "appversion is: $appversion"
                """
