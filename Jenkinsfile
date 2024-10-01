@@ -21,6 +21,7 @@ pipeline {
                }
             }
         } 
+
         stage('dependece insatll') {
             steps {
                sh """
@@ -30,6 +31,19 @@ pipeline {
                """
             }
         }
+           stage('sonar scane') {
+            environment{
+                scannerHome = tool 'sonar-6.2'
+            }
+            steps{
+                script{
+                    withSonarQubeEnv('sonar-6.2'){
+                        sh "${scannerHome}/bin/sonar-scanner"
+                }
+                }
+            }
+        } 
+
         stage('zip the file') {
             steps {
                 sh """
